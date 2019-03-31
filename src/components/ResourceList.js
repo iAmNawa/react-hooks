@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
-const ResourceList = ({ resource }) => {
+const useResources = (resource) => {
   // Initialized state - [], resources has access, and setResources can change it
   const [resources, setResources] = useState([]);
 
@@ -14,7 +14,11 @@ const ResourceList = ({ resource }) => {
     })(resource);
     // Arrow function above is not called if resource below is the same
   }, [resource]);
+  return resources;
+}
 
+const ResourceList = ({ resource }) => {
+  const resources = useResources(resource);
   return (
     <ul>{resources.map(record => <li key={record.id}>{record.title}</li>)}</ul>
   );
