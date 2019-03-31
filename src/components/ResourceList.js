@@ -15,7 +15,7 @@ const ResourceList = ({ resource }) => {
   useEffect(() => {
     fetchResource(resource);
     // Arrow function above is not called if resource below is the same
-  }, [resource])
+  }, [resource]);
 
   return (
     <div>{resources.length}</div>
