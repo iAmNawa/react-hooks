@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ResourceList from './ResourceList';
 
 const App = () => {
   //  resource is similar to this.state.resource
@@ -17,7 +18,7 @@ const App = () => {
         </button>
       </div>
       {/*here is the state*/}
-      {resource}
+      <ResourceList resource={resource} />
     </div>
   );
 }
