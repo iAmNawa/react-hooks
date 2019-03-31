@@ -11,12 +11,12 @@ const ResourceList = ({ resource }) => {
       const response = await axios.get(`https://jsonplaceholder.typicode.com/${resource}`)
       // setState
       setResources(response.data);
-    })(resource)
+    })(resource);
     // Arrow function above is not called if resource below is the same
   }, [resource]);
 
   return (
-    <div>{resources.length}</div>
+    <ul>{resources.map(record => <li>{record.title}</li>)}</ul>
   );
 }
 
