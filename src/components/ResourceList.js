@@ -16,7 +16,7 @@ const ResourceList = ({ resource }) => {
   }, [resource]);
 
   return (
-    <ul>{resources.map(record => <li>{record.title}</li>)}</ul>
+    <ul>{resources.map(record => <li key={record.id}>{record.title}</li>)}</ul>
   );
 }
 
